@@ -1,0 +1,28 @@
+1097B:B. Petr and a Combination Lock
+
+
+
+https://codeforces.com/contest/1097/problem/B
+
+
+
+n=int(input())
+l=[]
+g=0
+for i in range(n):
+    x=int(input())
+    l.append(x)
+for j in range(0,(1<<n)):
+    sum=0
+    for k in range(0,n):            
+        if(j&(1<<k)):
+            sum=sum+l[k]
+        else:
+            sum=sum-l[k]
+    if(sum%360==0):
+        g=1
+        break
+if(g==1):
+    print("YES")
+else:
+    print("NO")
